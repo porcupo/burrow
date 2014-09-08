@@ -1,8 +1,8 @@
-= nest_cli
+# nest-cli
 
-Description goes here.
+CLI tool to control your nest thermostat
 
-== Contributing to nest_cli
+## Contributing
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
