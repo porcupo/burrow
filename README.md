@@ -1,4 +1,4 @@
-# nest-cli
+# nest
 
 CLI tool to control your nest thermostat
 

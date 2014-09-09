@@ -3,8 +3,8 @@ require 'nest_thermostat'
 require 'formatador'
 require 'ap'
 
-# Assume credentials file is in ~/.nest-cli.yaml
-config_file = "#{ENV['HOME']}/.nest-cli.yaml"
+# Assume credentials file is in ~/.nest.yaml
+config_file = "#{ENV['HOME']}/.nest.yaml"
 config = YAML.load_file(conf_file)
 
 module Nest
