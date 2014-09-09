@@ -1,0 +1,2 @@
+module Burrow
+end

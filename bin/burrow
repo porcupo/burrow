@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require 'thor'
+#require 'burrow'
+
+module Burrow
+  require 'burrow/cli'
+end
+
+Burrow::CLI.start(ARGV)
