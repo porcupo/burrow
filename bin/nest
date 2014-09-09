@@ -1,5 +1,10 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/nest/cli'
+require 'thor'
+require 'nest'
 
-Nest::CLI.start
+module Nest
+  require 'nest/cli'
+end
+
+Nest::CLI.start(ARGV)

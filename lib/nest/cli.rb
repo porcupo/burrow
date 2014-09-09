@@ -1,20 +1,19 @@
 require 'thor'
 require 'nest_thermostat'
-require 'thor'
 require 'formatador'
-require 'pp'
 require 'ap'
 
-NEST_EMAIL = 'nest@qpine.net'
-NEST_PASSW = 'n00dles'
+# Assume credentials file is in ~/.nest-cli.yaml
+config_file = "#{ENV['HOME']}/.nest-cli.yaml"
+config = YAML.load_file(conf_file)
 
 module Nest
   class CLI < Thor
     desc "show", "Display status"
     def show
       @nest = NestThermostat::Nest.new({
-                                         email: NEST_EMAIL,
-                                         password: NEST_PASSW
+                                         email: config[:nest_email],
+                                         password: config[:nest_passw]
                                        })
       nest_table = [
                     { :setting => 'Current temp', :value => @nest.current_temperature },
