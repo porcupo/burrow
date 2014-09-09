@@ -54,7 +54,7 @@ Commands:
 ```
 
 ```bash
->:3 be ruby lib/nest/cli.rb temp 70                                                               🍦  1   1:41:33
+>:3 burrow temp 70
     +-----------------+-------+
     | setting         | value |
     +-----------------+-------+

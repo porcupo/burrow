@@ -18,10 +18,9 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/porcupo/burrow"
   gem.license = "MIT"
   gem.summary = %Q{Command-line interface for Nest thermostats}
-  gem.description = %Q{TODO: longer description of your gem}
   gem.email = "doug@porcupo.net"
   gem.authors = ["Doug Johnson"]
-  # dependencies defined in Gemfile
+  gem.executables = ['burrow']       
 end
 Jeweler::RubygemsDotOrgTasks.new
 
