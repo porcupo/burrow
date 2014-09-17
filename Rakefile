@@ -14,14 +14,13 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
-  gem.name = "nest"
-  gem.homepage = "http://github.com/porcupo/nest"
+  gem.name = "burrow"
+  gem.homepage = "http://github.com/porcupo/burrow"
   gem.license = "MIT"
   gem.summary = %Q{Command-line interface for Nest thermostats}
-  gem.description = %Q{TODO: longer description of your gem}
   gem.email = "doug@porcupo.net"
   gem.authors = ["Doug Johnson"]
-  # dependencies defined in Gemfile
+  gem.executables = ['burrow']       
 end
 Jeweler::RubygemsDotOrgTasks.new
 

@@ -1,19 +1,75 @@
-# nest
+# burrow
 
-CLI tool to control your nest thermostat
+Command-line tool to control your nest thermostat
+Mostly just a learning project
 
-## Contributing
- 
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
-* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
-* Fork the project.
-* Start a feature/bugfix branch.
-* Commit and push until you are happy with your contribution.
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+This is based off the easy-to-use ericboehs/nest_thermostat gem.
 
-== Copyright
+## Setup
+* Modify `burrow.yaml` and save it as `~/.burrow.yaml`
 
-Copyright (c) 2014 Doug Johnson. See LICENSE.txt for
-further details.
+## Usage examples
+```bash
+>:3 burrow
+Commands:
+  cli.rb away            # Set away
+  cli.rb dump            # Dump status
+  cli.rb help [COMMAND]  # Describe available commands or one specific command
+  cli.rb home            # Set home
+  cli.rb show            # Display status
+  cli.rb temp TARGET     # Set temperature
+>:3
+```
+
+```bash
+>:3 burrow show
+    +----------------+---------------------------+
+    | setting        | value                     |
+    +----------------+---------------------------+
+    | Current temp   | 76.262                    |
+    +----------------+---------------------------+
+    | Set temp       | 72.91                     |
+    +----------------+---------------------------+
+    | Target temp at | 2014-09-09 03:34:44 -0400 |
+    +----------------+---------------------------+
+    | Away?          | false                     |
+    +----------------+---------------------------+
+    | Leaf?          | false                     |
+    +----------------+---------------------------+
+    | Humidity       | 43                        |
+    +----------------+---------------------------+
+>:3
+```
+
+```bash
+>:3 burrow home
+    +-----------+-------+
+    | setting   | value |
+    +-----------+-------+
+    | Was away? | false |
+    +-----------+-------+
+    | Is away?  | false |
+    +-----------+-------+
+>:3
+```
+
+```bash
+>:3 burrow temp 70
+    +-----------------+-------+
+    | setting         | value |
+    +-----------------+-------+
+    | Previous target | 72.91 |
+    +-----------------+-------+
+    | Current Target  | 70.0  |
+    +-----------------+-------+
+>:3
+```
+
+## Todo
+* Switch between cool/heat/cool+heat/off
+* fan timer
+* configuration
+
+## License
+* See LICENSE.txt for further details.
 
