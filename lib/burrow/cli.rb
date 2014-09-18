@@ -2,9 +2,7 @@ require 'thor'
 require 'nest_thermostat'
 require 'formatador'
 require 'ap'
-
-config_file = "#{ENV['HOME']}/.burrow.yaml"
-config = YAML.load_file(conf_file)
+require 'burrow/config'
 
 module Burrow
   class CLI < Thor
