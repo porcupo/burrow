@@ -1,14 +1,31 @@
-# burrow
+# Burrow
 
 Command-line tool to control your nest thermostat
 Mostly just a learning project
 
 This is based off the easy-to-use ericboehs/nest_thermostat gem.
 
-## Setup
-* Modify `burrow.yaml` and save it as `~/.burrow.yaml`
+## Installation
 
-## Usage examples
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'burrow'
+```
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install burrow
+
+## Prerequisites
+* Modify `burrow.yaml.example` and save it as `~/.burrow.yaml`
+
+## Usage
+
 ```bash
 >:3 burrow
 Commands:
@@ -67,9 +84,13 @@ Commands:
 
 ## Todo
 * Switch between cool/heat/cool+heat/off
-* fan timer
+* trigger fan timer
 * configuration
 
-## License
-* See LICENSE.txt for further details.
+## Contributing
 
+1. Fork it ( https://github.com/porcupo/burrow/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
