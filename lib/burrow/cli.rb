@@ -6,12 +6,11 @@ require 'burrow/config'
 
 module Burrow
   class CLI < Thor
+    @@config = Burrow.config
+
     desc "show", "Display status"
     def show
-      @burrow = NestThermostat::Nest.new({
-                                         email: config[:email],
-                                         password: config[:password]
-                                       })
+      @burrow = NestThermostat::Nest.new(@@config)
       burrow_table = [
                     { :setting => 'Current temp', :value => @burrow.current_temperature },
                     { :setting => 'Set temp', :value => @burrow.temperature },
@@ -27,7 +26,7 @@ module Burrow
     end
     desc "temp TARGET", "Set temperature"
     def temp(target_temp)
-      @burrow = NestThermostat::Nest.new({ email: config[:email], password: config[:password] })
+      @burrow = NestThermostat::Nest.new(@@config)
       p_temp = @burrow.temperature
       @burrow.temperature = target_temp
 
@@ -42,7 +41,7 @@ module Burrow
 
     desc "away", "Set away"
     def away
-      @burrow = NestThermostat::Nest.new({email: config[:email], password: config[:password]})
+      @burrow = NestThermostat::Nest.new(@@config)
       p_away = @burrow.away
       @burrow.away = true
       burrow_table = [{ :setting => 'Was away?', :value => p_away.to_s},
@@ -55,7 +54,7 @@ module Burrow
 
     desc "home", "Set home"
     def home
-      @burrow = NestThermostat::Nest.new({email: config[:email], password: config[:password]})
+      @burrow = NestThermostat::Nest.new(@@config)
       p_away = @burrow.away
       @burrow.away = false
       burrow_table = [{ :setting => 'Was away?', :value => p_away.to_s},
@@ -68,7 +67,7 @@ module Burrow
 
     desc "dump", "Dump status"
     def dump
-      @burrow = NestThermostat::Nest.new({ email: config[:email], password: config[:password] })
+      @burrow = NestThermostat::Nest.new(@@config)
       ap @burrow.status
     end
   end
